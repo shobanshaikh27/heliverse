@@ -5,13 +5,19 @@ const User = require('../models/Users.js');
 const getAllUsers = async(req,res)=>{
     
     try {
-        const user = await User.find({}).sort('id')
+        const page = req.query.page || 1;
+        const limit = req.query.limit || 20;
+        const skip = (page - 1) * limit;
+        const user = await User.find({}).sort('id').skip(skip).limit(limit)
         res.status(200).json({user, len: user.length})
 
     } catch (error) {
         // console.log('Error fetching users:', error);
         res.status(500).json({ msg: 'Internal Server Error',error });
     }
+
+   
+
 }
 
 const createUser = async (req,res) => {
@@ -65,5 +71,6 @@ const deleteUser = async (req,res) => {
         res.status(500).json({msg : error})
     }
 }
+
 
 module.exports={getAllUsers,createUser,getUser,deleteUser,updateUser}

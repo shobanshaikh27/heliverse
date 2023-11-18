@@ -42,7 +42,7 @@ const importData = async () => {
   }
 }
 
-// importData();
+importData();
 
 const PORT = process.env.PORT || 5000
 
