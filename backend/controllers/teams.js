@@ -1,3 +1,4 @@
+const { default: mongoose } = require('mongoose');
 const Team = require('../models/Teams.js');
 const User = require('../models/Users.js');
 
@@ -38,10 +39,7 @@ const getSingleTeam = async (req, res) => {
             return res.status(400).json({ error: 'Invalid Team ID' });
         }
 
-        // Find the team by ID and populate the 'users' field with user details
         const team = await Team.findById(teamId).populate('users.user');
-
-        // Check if the team exists
         if (!team) {
             return res.status(404).json({ msg: 'Team not found' });
         }

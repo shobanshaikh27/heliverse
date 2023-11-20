@@ -19,7 +19,6 @@ const Navbar = () => {
   };
 
   const fetchData = async (page) => {
-    // Fetch data logic here
   };
 
   useEffect(() => {
@@ -29,10 +28,8 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex items-center justify-between">
-        {/* Logo */}
         <div className="text-white text-lg font-bold">HELIVERSE</div>
 
-        {/* Mobile Menu Button */}
         <button
           className="lg:hidden text-white focus:outline-none"
           onClick={() => console.log('Toggle mobile menu')}
@@ -53,9 +50,8 @@ const Navbar = () => {
           </svg>
         </button>
 
-        {/* Responsive Menu */}
+     
         <div className="hidden lg:flex flex-grow mx-12 justify-end">
-          {/* Tabs */}
           <div className="flex items-center space-x-4">
             <Link
               to="/"

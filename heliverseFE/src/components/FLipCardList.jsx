@@ -29,23 +29,19 @@ const FlipCardList = ({ userData }) => {
         setIsModalOpen(false);
         setTeamName('');
     };
-    // console.log("Selected Users",selectedUsers)
 
     const handleAddTeam = async () => {
         try {
-            // Make sure a team name is provided
             if (!teamName) {
                 console.log('Team name is required');
                 return;
             }
 
-            // Make a POST request to your backend API to create a team
             const response = await axios.post('http://localhost:5000/api/team', {
                 name: teamName,
                 selectedUserIds: selectedUsers,
             });
 
-            // Check the response status and handle accordingly
             if (response.status === 201) {
                 console.log('Team created successfully:', response.data.team);
             } else {
@@ -54,14 +50,12 @@ const FlipCardList = ({ userData }) => {
         } catch (error) {
             console.error('Error creating team:', error);
         } finally {
-            // Close the modal and reset the team name after processing
             setIsModalOpen(false);
             setTeamName('');
         }
     };
 
     const handleClearSelection = () => {
-        // Clear the selected users
         setSelectedUsers([]);
     };
 
@@ -84,8 +78,6 @@ const FlipCardList = ({ userData }) => {
                     </div>
                 ))}
             </div>
-
-            {/* Display selected users at the end of the page */}
             {selectedUsers.length > 0 && (
                 <div className="mt-8 text-center">
                     <h2 className="text-2xl font-bold mb-4 text-blue-500">Selected Users</h2>
