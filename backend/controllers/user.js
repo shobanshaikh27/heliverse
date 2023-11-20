@@ -3,21 +3,31 @@ const User = require('../models/Users.js');
 
 
 const getAllUsers = async(req,res)=>{
-    
+    const {finduser,domain,available,gender} = req.query;
+    const queryObject = {};
+
+    if (finduser){
+        queryObject.first_name = { $regex: finduser, $options: 'i'};
+    }
+    if (domain){
+        queryObject.domain = domain
+        // console.log(queryObject.domain)
+    }
+    if (available){
+        queryObject.available = available
+    }
+    if (gender){
+        queryObject.gender = gender
+    }
     try {
         const page = req.query.page || 1;
-        const limit = req.query.limit || 20;
-        const skip = (page - 1) * limit;
-        const user = await User.find({}).sort('id').skip(skip).limit(limit)
+        const user = await User.find(queryObject).sort('id')
         res.status(200).json({user, len: user.length})
 
     } catch (error) {
         // console.log('Error fetching users:', error);
         res.status(500).json({ msg: 'Internal Server Error',error });
     }
-
-   
-
 }
 
 const createUser = async (req,res) => {
