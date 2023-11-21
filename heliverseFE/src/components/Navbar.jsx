@@ -9,7 +9,7 @@ const Navbar = () => {
   const searchUser = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:5000/api/users/?first_name=${findUser}`);
+      const response = await axios.get(`https://heliverse-internship.onrender.com/api/users/?first_name=${findUser}`);
       const result = response.data;
       setUserData(result.user);
       console.log(result.user)

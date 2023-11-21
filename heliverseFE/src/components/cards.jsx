@@ -10,7 +10,7 @@ function Cards({ queryString }) {
   const usersPerPage = 20;
   const fetchData = async (page) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/users/?page=${page}&finduser=${findUser}&${queryString}`);
+      const response = await axios.get(`https://heliverse-internship.onrender.com/api/users/?page=${page}&finduser=${findUser}&${queryString}`);
       // console.log("cards query",queryString)
       const result = response.data;
       setUserData(result.user);

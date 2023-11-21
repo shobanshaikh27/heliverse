@@ -37,7 +37,7 @@ const FlipCardList = ({ userData }) => {
                 return;
             }
 
-            const response = await axios.post('http://localhost:5000/api/team', {
+            const response = await axios.post('https://heliverse-internship.onrender.com/api/team', {
                 name: teamName,
                 selectedUserIds: selectedUsers,
             });

@@ -10,7 +10,7 @@ const Teams = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/team`);
+            const response = await axios.get(`https://heliverse-internship.onrender.com/api/team`);
             const result = response.data;
             setTeamData(result);
         } catch (error) {

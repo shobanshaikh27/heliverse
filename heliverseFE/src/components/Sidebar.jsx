@@ -11,7 +11,7 @@ const Sidebar = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/users`);
+      const response = await axios.get(`https://heliverse-internship.onrender.com/api/users`);
       const result = response.data;
 
       // Extract unique domains
