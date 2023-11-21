@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Sidebar />} />
-          <Route exact path='/teams' element={<Teams />} />
+          <Route exact path='/teams/:id' element={<Teams />} />
           {/* <Cards /> */}
         </Routes>
       </Router>

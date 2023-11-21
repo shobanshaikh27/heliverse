@@ -26,7 +26,7 @@ const Navbar = () => {
   }, [currentPage]);
 
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-gray-800 p-4 ">
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-white text-lg font-bold">HELIVERSE</div>
      
