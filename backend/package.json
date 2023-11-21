@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shobanshaikh27/heliverse.git"
+    "url": "git+https://github.com/kamil200/heliverse.git"
   },
   "keywords": [
     "internship"
   ],
-  "author": "shoban",
+  "author": "kamil",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shobanshaikh27/heliverse/issues"
+    "url": "https://github.com/kamil200/heliverse/issues"
   },
-  "homepage": "https://github.com/shobanshaikh27/heliverse#readme",
+  "homepage": "https://github.com/kamil200/heliverse#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
