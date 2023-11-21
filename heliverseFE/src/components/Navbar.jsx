@@ -29,29 +29,8 @@ const Navbar = () => {
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-white text-lg font-bold">HELIVERSE</div>
-
-        <button
-          className="lg:hidden text-white focus:outline-none"
-          onClick={() => console.log('Toggle mobile menu')}
-        >
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
-
      
-        <div className="hidden lg:flex flex-grow mx-12 justify-end">
+        <div className="md:justify-center sm:justify-center lg:flex flex-grow mx-12 justify-end">
           <div className="flex items-center space-x-4">
             <Link
               to="/"
